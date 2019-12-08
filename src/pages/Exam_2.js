@@ -11,6 +11,7 @@ class Exam_2 extends Component {
     constructor(props){
         super(props);
         this.state = {
+            status      : 'edit',
             mode        : 'create',
             select_id   : 0,
             subject     : { title:"WEB2"         , sub:"World Wide Web!" },
@@ -25,12 +26,14 @@ class Exam_2 extends Component {
 
     handleChangeMainPage = () => {
         this.setState({
-            mode: "welcome",
+            status  : "normal",
+            mode    : "welcome",
         });
     }
 
     handleChangePage = (_id) => {
         this.setState({
+            status      : "normal",
             mode        : "read",
             select_id   : _id
         });
@@ -38,16 +41,22 @@ class Exam_2 extends Component {
 
     handleChangeMode = (_mode) => {
         this.setState({
-            mode : _mode
+            status  : 'edit',
+            mode    : _mode
         });
     }
 
     handleOnSubmit = (_title, _desc) => {
-        var _size = this.state.contents.length;
-
-        var _contents = this.state.contents.concat(
+        // Array 
+        var _contents = Array.from(this.state.contents)
+        var _size = _contents.length;
+        _contents.push(
             {id: _size++, title:_title, desc:_desc}
         );
+
+        // Object
+        // var _size = Object.keys(_contents).length;
+        // var _contents = Object.assign({id: _size++, title:_title, desc:_desc}, this.state.contents);
 
         this.setState({
             contents : _contents

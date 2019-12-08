@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Subject extends Component {
+    shouldComponentUpdate(newProps, newState){
+        return !(newProps.title === this.props.title)
+    }
     handleClick = (e) => {
         e.preventDefault();
         this.props.onChangePage();

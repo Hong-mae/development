@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class TOC extends Component {
+    shouldComponentUpdate(newProps, newState) {
+        return !(newProps.data === this.props.data)
+    }
+
     handleClick = (e) => {
         e.preventDefault();
         this.props.onChangePage(e.target.dataset.id);
