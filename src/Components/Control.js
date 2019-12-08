@@ -3,25 +3,16 @@ import React, { Component } from 'react'
 export class Control extends Component {
     handleOnClick = (_e) => {
         _e.preventDefault();
+        this.props.onChangeMode(_e.target.name);
     };
-
-    handleOnCreate = (e) => {
-        this.handleOnClick(e);
-        this.props.onChangeMode('create');
-    }
-
-    handleOnUpdate = (e) => {
-        this.handleOnClick(e);
-        this.props.onChangeMode('update');
-    }
 
     render() {
         return (
             <div>
                 <ul>
-                    <li><a href='/Create' onClick={this.handleOnCreate}>Create</a></li>
-                    <li><a href='/Update' onClick={this.handleOnUpdate}>Update</a></li>
-                    <li><input type='button' value='Delete'/></li>
+                    <li><a href='/Create' name='create' onClick={this.handleOnClick}>Create</a></li>
+                    <li><a href='/Update' name='update' onClick={this.handleOnClick}>Update</a></li>
+                    <li><input type='button' value='Delete' name='delete' onClick={this.handleOnClick}/></li>
                 </ul>
             </div>
         )

@@ -9,6 +9,7 @@ class CreateContent extends Component {
     }
 
     render() {
+        console.log("CreateContent Render");
         return (
             <article>
                 <h2>Create</h2>

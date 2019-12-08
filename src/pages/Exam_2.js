@@ -5,6 +5,7 @@ import Subject from '../Components/Subject'
 import TOC from '../Components/TOC'
 import ReadContent from '../Components/ReadContent'
 import CreateContent from '../Components/CreateContent';
+import UpdateContent from '../Components/UpdateContent';
 import Control from '../Components/Control'
 
 class Exam_2 extends Component {
@@ -12,7 +13,7 @@ class Exam_2 extends Component {
         super(props);
         this.state = {
             status      : 'edit',
-            mode        : 'create',
+            mode        : 'welcome',
             select_id   : 0,
             subject     : { title:"WEB2"         , sub:"World Wide Web!" },
             welcome     : { title: 'Welcome'    , desc: 'Hello React!'  },
@@ -40,10 +41,35 @@ class Exam_2 extends Component {
     }
 
     handleChangeMode = (_mode) => {
-        this.setState({
-            status  : 'edit',
-            mode    : _mode
-        });
+        if(_mode === 'delete'){
+            if(window.confirm("Really?")){
+                var _contents = Array.from(this.state.contents);
+                var i = 0;
+                while(i < _contents.length) {
+                    console.log(_contents[i].id, this.state.select_id);
+                    if(_contents[i].id == this.state.select_id){
+                        
+                        _contents.splice(i, 1);
+                        break;
+                    }
+                    i++;
+                }
+
+                this.setState({
+                    status      : 'normal',
+                    mode        : "welcome",
+                    select_id   : 0,
+                    contents    : _contents,
+                });
+
+                alert("deleted!");
+            }
+        } else {
+            this.setState({
+                status  : 'edit',
+                mode    : _mode
+            });
+        }
     }
 
     handleOnSubmit = (_title, _desc) => {
@@ -59,26 +85,64 @@ class Exam_2 extends Component {
         // var _contents = Object.assign({id: _size++, title:_title, desc:_desc}, this.state.contents);
 
         this.setState({
-            contents : _contents
+            contents    : _contents,
+            status      : "normal",
+            mode        : "read",
         });
     }
 
-    render() {
-        console.log("App Render");
-        var _title, _desc, _article = null;
+    handleUpdateContent = (_id, _title, _desc) => {
+        var _contents = Array.from(this.state.contents);
+        var i = 0;
 
+        while(i < _contents.length){
+            if(_contents[i].id === _id){
+                _contents[i] = {id: _id, title:_title, desc:_desc};
+                break;
+            }
+            i++;
+        }
+
+        this.setState({
+            contents    : _contents,
+            status      : "normal",
+            mode        : "read",
+        })
+    }
+
+    getReadContent = () => {
+        var i = 0;
+        while(i < this.state.contents.length){
+            var data = this.state.contents[i];
+            if(data.id == this.state.select_id){
+                return data;
+            }
+            i++;
+        }
+    }
+
+    getContent(){
+        var _title, _desc, _article, _contents = null;
+        
         if (this.state.mode === "welcome") {
             _title  = this.state.welcome.title;
             _desc   = this.state.welcome.desc;
             _article= <ReadContent title={_title} desc={_desc}/>
         } else if (this.state.mode === "read") {
-            _title  = this.state.contents[this.state.select_id].title;
-            _desc   = this.state.contents[this.state.select_id].desc;
-            _article= <ReadContent title={_title} desc={_desc}/>
+            _contents = this.getReadContent();
+            _article= <ReadContent title={_contents.title} desc={_contents.desc}/>
         } else if (this.state.mode === "create") {
             _article= <CreateContent onSubmit={this.handleOnSubmit}/>
+        } else if (this.state.mode === "update") {
+            _contents = this.getReadContent();
+            _article= <UpdateContent data={_contents} onSubmit={this.handleUpdateContent}/>
         }
-        
+
+        return _article;
+    }
+
+    render() {
+        console.log("App Render");
         return (
             <div className="App">
                 <Subject 
@@ -89,7 +153,7 @@ class Exam_2 extends Component {
                 <TOC 
                     data={this.state.contents}
                     onChangePage={this.handleChangePage}/>
-                {_article}
+                {this.getContent()}
             </div>
         );
     }
