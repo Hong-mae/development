@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
-// CSS
-import './App.css';
-
 // Component
-import Routers from './Components/Routers'
+import Routers from './Components/public/Routers'
 
 class App extends Component {
     render() {

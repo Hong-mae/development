@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // 컴포넌트 모듈화
-import Subject from '../Components/Subject'
-import TOC from '../Components/TOC'
-import Content from '../Components/Content'
+import Subject from '../Components/Exam1/Subject'
+import TOC from '../Components/Exam1/TOC'
+import Content from '../Components/Exam1/Content'
 
 class Exam_1 extends Component {
     constructor(props){

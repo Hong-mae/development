@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 // 컴포넌트 모듈화
-import Subject from '../Components/Subject'
-import TOC from '../Components/TOC'
-import ReadContent from '../Components/ReadContent'
-import CreateContent from '../Components/CreateContent';
-import UpdateContent from '../Components/UpdateContent';
-import Control from '../Components/Control'
+import Subject from '../Components/Exam2/Subject'
+import TOC from '../Components/Exam2/TOC'
+import ReadContent from '../Components/Exam2/ReadContent'
+import CreateContent from '../Components/Exam2/CreateContent';
+import UpdateContent from '../Components/Exam2/UpdateContent';
+import Control from '../Components/Exam2/Control'
 
 class Exam_2 extends Component {
     constructor(props){
