@@ -12,7 +12,7 @@ export class Header extends Component {
                 <Link className='navbar-item' to='/Exam2'>예제2</Link>
                 <Link className='navbar-item' to='/Exam3'>SCSS</Link>
                 <Link className='navbar-item' to='/Exam4'>Count</Link>
-                <Link className='navbar-item' to='/Exam5'>To-do-List</Link>
+                <Link className='navbar-item' to='/Exam5'>Phone-Book</Link>
             </nav>
         )
     }

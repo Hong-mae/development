@@ -6,9 +6,10 @@ export class index extends Component {
             <div>
                 리액트 공부에 도움이 된 영상 / 문헌
 
-                <ul>
-                <li>1. 생활코딩 Youtube [<a href='https://youtu.be/OpLMcB1nRkE'>https://youtu.be/OpLMcB1nRkE</a>]</li>
-                </ul>
+                <ol>
+                    <li>생활코딩 Youtube [<a href='https://youtu.be/OpLMcB1nRkE'>https://youtu.be/OpLMcB1nRkE</a>]</li>
+                    <li>VELOPERT.LOG [<a href='https://velopert.com/reactjs-tutorials'>https://velopert.com/reactjs-tutorials</a>]</li>
+                </ol>
             </div>
         )
     }
