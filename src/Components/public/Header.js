@@ -7,12 +7,12 @@ export class Header extends Component {
     render() {
         return (
             <nav className='navbar'>
-                <Link className='navbar-item' to='/'>홈</Link>
-                <Link className='navbar-item' to='/Exam1'>예제1</Link>
-                <Link className='navbar-item' to='/Exam2'>예제2</Link>
-                <Link className='navbar-item' to='/Exam3'>SCSS</Link>
-                <Link className='navbar-item' to='/Exam4'>Count</Link>
-                <Link className='navbar-item' to='/Exam5'>Phone-Book</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL}>홈</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Exam1'}>예제1</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Exam2'}>예제2</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Exam3'}>SCSS</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Exam4'}>Count</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Exam5'}>Phone-Book</Link>
             </nav>
         )
     }

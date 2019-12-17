@@ -11,6 +11,12 @@ export class Exam_3 extends Component {
                     <li>원하는 scss 생성 밎 import</li>
                     <li>끝</li>
                 </ol>
+
+                <h2>개발 환경 별 변수 설정법!</h2>
+                <ol>
+                    <li>npm start : .env.development.local</li>
+                    <li>npm deploy & npm build : .env.production.local</li>
+                </ol>
             </div>
         )
     }

@@ -10,18 +10,23 @@ import Exam3 from '../../pages/Exam_3'
 import Exam4 from '../../pages/Exam_4'
 import Exam5 from '../../pages/Exam_5'
 
+var url = "/";
+if(process.env.NODE_ENV == 'production') {
+    url += "development/";
+}
+
 export class Routers extends Component {
     render() {
         return (
             <Router>
                 <Header/>
                 <div className='container-fluid'>
-                    <Route exact path="/" component={main} />
-                    <Route path="/Exam1" component={Exam1} />
-                    <Route path="/Exam2" component={Exam2} />
-                    <Route path="/Exam3" component={Exam3} />
-                    <Route path="/Exam4" component={Exam4} />
-                    <Route path="/Exam5" component={Exam5} />
+                    <Route exact path={url} component={main} />
+                    <Route path={url + "Exam1"} component={Exam1} />
+                    <Route path={url + "Exam2"} component={Exam2} />
+                    <Route path={url + "Exam3"} component={Exam3} />
+                    <Route path={url + "Exam4"} component={Exam4} />
+                    <Route path={url + "Exam5"} component={Exam5} />
                 </div>
             </Router>
         )
