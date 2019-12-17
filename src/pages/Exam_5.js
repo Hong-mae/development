@@ -25,11 +25,37 @@ export class Exam_5 extends Component {
 
     handleCreate = (data) => {
         const { information } = this.state;
-        var id = information.length;
+        var id = '';
+        if(information.length < 1){
+            id = 0;
+        } else {
+            var temp = Array.from(information);
+            id = temp[temp.length - 1].id + 1;
+        }
 
         this.setState({
             information: information.concat( { id: id, ...data } )
         });
+    }
+
+    handleRemove = (id) => {
+        const { information } = this.state;
+
+        this.setState({
+            information: information.filter(info=> info.id !== id)
+        })
+    }
+
+    handleUpdate = (id, data) => {
+        const { information } = this.state;
+
+        this.setState({
+            information: information.map(
+                info => info.id === info.id
+                    ? { ...info, ...data }
+                    : info
+            )
+        })
     }
 
     render() {
@@ -37,7 +63,11 @@ export class Exam_5 extends Component {
         return (
             <div>
                 <PhoneForm onCreate={this.handleCreate}/>
-                <PhoneInfoList data={this.state.information}/>
+                <PhoneInfoList 
+                    data={this.state.information}
+                    onRemove={this.handleRemove}
+                    onUpdate={this.handleUpdate}
+                />
             </div>
         )
     }
