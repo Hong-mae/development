@@ -8,7 +8,7 @@ export class Exam_5 extends Component {
         super(props);
 
         this.state = {
-            information : [
+            information: [
                 {
                     id: 0,
                     name: '김민준',
@@ -19,14 +19,15 @@ export class Exam_5 extends Component {
                     name: '홍길동',
                     phone: '010-0000-0001'
                 }
-            ]
+            ],
+            keyword: '',
         }
     }
 
     handleCreate = (data) => {
         const { information } = this.state;
         var id = '';
-        if(information.length < 1){
+        if (information.length < 1) {
             id = 0;
         } else {
             var temp = Array.from(information);
@@ -34,7 +35,7 @@ export class Exam_5 extends Component {
         }
 
         this.setState({
-            information: information.concat( { id: id, ...data } )
+            information: information.concat({ id: id, ...data })
         });
     }
 
@@ -44,8 +45,14 @@ export class Exam_5 extends Component {
         console.log(id);
 
         this.setState({
-            information: information.filter(info=> info.id !== id)
+            information: information.filter(info => info.id !== id)
         })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            keyword: e.target.value,
+        });
     }
 
     handleUpdate = (id, data) => {
@@ -61,12 +68,23 @@ export class Exam_5 extends Component {
     }
 
     render() {
-        const { information } = this.state;
+        const { information, keyword } = this.state;
+        const filteredList = information.filter(
+            info => info.name.indexOf(keyword) !== -1
+        );
+
         return (
             <div>
-                <PhoneForm onCreate={this.handleCreate}/>
-                <PhoneInfoList 
-                    data={this.state.information}
+                <PhoneForm onCreate={this.handleCreate} />
+                <p>
+                    <input
+                        placeholder="검색 할 이름을 입력하세요.."
+                        onChange={this.handleChange}
+                        value={keyword}
+                    />
+                </p>
+                <PhoneInfoList
+                    data={filteredList}
                     onRemove={this.handleRemove}
                     onUpdate={this.handleUpdate}
                 />

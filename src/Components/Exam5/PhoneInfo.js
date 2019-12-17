@@ -61,7 +61,17 @@ export class PhoneInfo extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        if(!this.state.is_edit
+            && !nextState.is_edit
+            && nextProps.info === nextProps.info)
+            return false;
+        return true
+    }
+
     render() {
+        console.log('render PhoneInfo ' + this.props.info.id);
+
         const { is_edit } = this.state;
 
         if(is_edit) {
