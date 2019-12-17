@@ -45,7 +45,6 @@ export class PhoneInfo extends Component {
 
     componentDidUpdate(prevProps, prevState){
         const { info, onUpdate } = this.props;
-        console.log(info);
 
         if(!prevState.is_edit && this.state.is_edit) {
             this.setState({

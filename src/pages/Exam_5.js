@@ -41,6 +41,8 @@ export class Exam_5 extends Component {
     handleRemove = (id) => {
         const { information } = this.state;
 
+        console.log(id);
+
         this.setState({
             information: information.filter(info=> info.id !== id)
         })
@@ -51,7 +53,7 @@ export class Exam_5 extends Component {
 
         this.setState({
             information: information.map(
-                info => info.id === info.id
+                info => id === info.id
                     ? { ...info, ...data }
                     : info
             )
