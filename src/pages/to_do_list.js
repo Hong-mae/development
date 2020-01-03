@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import TodoListTemplate from '../Components/to_do_list/to_do_list_template'
 import Form from '../Components/to_do_list/form';
 import TodoItemList from '../Components/to_do_list/to_do_list_item'
+import Palette from '../Components/to_do_list/palette'
+
+const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
 
 export class to_do_list extends Component {
     constructor(props){
@@ -14,7 +17,8 @@ export class to_do_list extends Component {
                 { id: 0, text: ' 리액트 소개', checked: false },
                 { id: 1, text: ' 리액트 소개', checked: true },
                 { id: 2, text: ' 리액트 소개', checked: false }
-            ]
+            ],
+            color : '#343a40',
         }
     }
 
@@ -26,12 +30,12 @@ export class to_do_list extends Component {
 
     handleOnKeyPress = (e) => {
         if(e.key == 'Enter'){
-            // this.handleOnCreate;
+            this.handleOnCreate();
         }
     }
 
     handleOnCreate = () => {
-        const { input, todos } = this.state;
+        const { input, todos, color } = this.state;
 
         var _id = 0;
 
@@ -47,8 +51,9 @@ export class to_do_list extends Component {
             todos : todos.concat({
                 id : _id,
                 text : input,
-                checked : false
-            })
+                checked : false,
+                color
+            }),
         })
     }
 
@@ -78,8 +83,14 @@ export class to_do_list extends Component {
         });
     }
 
+    handleSelectColor = (color) => {
+        this.setState({
+            color
+        })
+    }
+
     render() {
-        const { input, todos } = this.state;
+        const { input, todos, color } = this.state;
         return (
             <TodoListTemplate 
                 form={
@@ -88,7 +99,11 @@ export class to_do_list extends Component {
                         onChange = {this.handleOnChange}
                         onKeyPress = {this.handleOnKeyPress}
                         onCreate = {this.handleOnCreate}
+                        color = {color}
                     />
+                }
+                palette={
+                    <Palette colors={colors} selected={color} onSelect={this.handleSelectColor}/>
                 }
             >
                 <TodoItemList 

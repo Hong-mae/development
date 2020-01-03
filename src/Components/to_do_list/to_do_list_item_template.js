@@ -21,14 +21,12 @@ export class to_do_list_item_template extends Component {
     }
 
     render() {
-        const { text, checked, id} = this.props;
-
-        console.log(id);
+        const { text, checked, color } = this.props;
 
         return (
             <div className="todo-item" onClick={this.handleOnToggle}>
                 <div className="remove" onClick={this.handleOnClick}>&times;</div>
-                <div className={`todo-text ${checked && 'checked'}`}>
+                <div style={{ color }} className={`todo-text ${checked && 'checked'}`}>
                     <div>{text}</div>
                 </div>
                 {
