@@ -7,6 +7,22 @@
         outline: none;
         border: none;
         border-bottom: 1px solid #c5f6fa;
+
+        &.black {
+            color : #343a40;
+        }
+
+        &.red {
+            color : #f03e3e;
+        }
+
+        &.green {
+            color : #12b886;
+        }
+
+        &.blue {
+            color : #228ae6;
+        }
     }
 }
 

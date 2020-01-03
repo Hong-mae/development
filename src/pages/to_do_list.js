@@ -5,7 +5,7 @@ import Form from '../Components/to_do_list/form';
 import TodoItemList from '../Components/to_do_list/to_do_list_item'
 import Palette from '../Components/to_do_list/palette'
 
-const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
+const colors = ['black', 'red', 'green', 'blue'];
 
 export class to_do_list extends Component {
     constructor(props){
@@ -18,7 +18,7 @@ export class to_do_list extends Component {
                 { id: 1, text: ' 리액트 소개', checked: true },
                 { id: 2, text: ' 리액트 소개', checked: false }
             ],
-            color : '#343a40',
+            color : 'black',
         }
     }
 

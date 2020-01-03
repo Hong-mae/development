@@ -26,8 +26,8 @@ export class to_do_list_item_template extends Component {
         return (
             <div className="todo-item" onClick={this.handleOnToggle}>
                 <div className="remove" onClick={this.handleOnClick}>&times;</div>
-                <div style={{ color }} className={`todo-text ${checked && 'checked'}`}>
-                    <div>{text}</div>
+                <div className={`todo-text ${checked && 'checked'} ${color}`}>
+                    <div className='todo-text-content'>{text}</div>
                 </div>
                 {
                     checked && (<div className="check-mark">&#x2713;</div>)

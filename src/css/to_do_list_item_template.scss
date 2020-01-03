@@ -17,30 +17,53 @@
     & + & {
         border-top: 1px solid #f1f3f5;
     }
+
+    .remove {
+        margin-right: 1rem;
+        color: #e64980;
+        font-weight: 600;
+        opacity: 0;
+    }
+    
+    .todo-text {
+        flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
+        word-break: break-all;
+        
+        &.black {
+            color : #343a40;
+        }
+
+        &.red {
+            color : #f03e3e;
+        }
+
+        &.green {
+            color : #12b886;
+        }
+
+        &.blue {
+            color : #228ae6;
+        }
+    }
+    
+    .checked {
+        text-decoration: line-through;
+        color: #adb5bd;
+
+        .todo-text {
+            &-content {
+                opacity: 0.75;
+            }
+        }
+    }
+    
+    .check-mark {
+        font-size: 1.5rem;
+        line-height: 1rem;
+        margin-left: 1rem;
+        color: #3bc9db;
+        font-weight: 800;
+    }
 }
 
 
-.remove {
-    margin-right: 1rem;
-    color: #e64980;
-    font-weight: 600;
-    opacity: 0;
-}
-
-.todo-text {
-    flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
-    word-break: break-all;
-}
-
-.checked {
-    text-decoration: line-through;
-    color: #adb5bd;
-}
-
-.check-mark {
-    font-size: 1.5rem;
-    line-height: 1rem;
-    margin-left: 1rem;
-    color: #3bc9db;
-    font-weight: 800;
-}
