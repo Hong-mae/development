@@ -7,17 +7,22 @@ import Palette from '../Components/to_do_list/palette'
 
 const colors = ['black', 'red', 'green', 'blue'];
 
+function create_list() {
+    var todos = [];
+    for(var i = 0; i < 2500; i++){
+        todos.push({id : i, text: `할일 ${i}`, checkec: false});
+    }
+
+    return todos;
+}
+
 export class to_do_list extends Component {
     constructor(props){
         super(props);
 
         this.state = {
             input: '',
-            todos: [
-                { id: 0, text: ' 리액트 소개', checked: false },
-                { id: 1, text: ' 리액트 소개', checked: true },
-                { id: 2, text: ' 리액트 소개', checked: false }
-            ],
+            todos: create_list(),
             color : 'black',
         }
     }

@@ -28,7 +28,7 @@
     .todo-text {
         flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
         word-break: break-all;
-        
+
         &.black {
             color : #343a40;
         }
@@ -52,7 +52,7 @@
 
         .todo-text {
             &-content {
-                opacity: 0.75;
+                opacity: 0.5;
             }
         }
     }
