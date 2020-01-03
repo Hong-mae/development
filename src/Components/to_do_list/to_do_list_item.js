@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import TodoListItemTemplate from './to_do_list_item_template';
 
 export class to_do_list_item extends Component {
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.todos !== nextProps.todos;
+    }
     render() {
         const { todos, onToggle, onRemove } = this.props;
 

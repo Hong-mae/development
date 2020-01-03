@@ -4,6 +4,10 @@ import '../../css/to_do_list_item_template.scss';
 
 export class to_do_list_item_template extends Component {
 
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.checked !== nextProps.checked;
+    }
+
     handleOnToggle = () => {
         const { id, onToggle } = this.props;
 
@@ -17,7 +21,10 @@ export class to_do_list_item_template extends Component {
     }
 
     render() {
-        const { text, checked} = this.props;
+        const { text, checked, id} = this.props;
+
+        console.log(id);
+
         return (
             <div className="todo-item" onClick={this.handleOnToggle}>
                 <div className="remove" onClick={this.handleOnClick}>&times;</div>
