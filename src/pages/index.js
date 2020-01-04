@@ -9,6 +9,7 @@ export class index extends Component {
                 <ol>
                     <li>생활코딩 Youtube [<a href='https://youtu.be/OpLMcB1nRkE'>https://youtu.be/OpLMcB1nRkE</a>]</li>
                     <li>VELOPERT.LOG [<a href='https://velopert.com/reactjs-tutorials'>https://velopert.com/reactjs-tutorials</a>]</li>
+                    <li>리액트를 다루는 기술 개정판 [지은이 : 김민준(VELOPERT), 출판사 : 길벗]</li>
                 </ol>
             </div>
         )

@@ -10,11 +10,13 @@ import Exam3 from '../../pages/Exam_3'
 import Exam4 from '../../pages/Exam_4'
 import Exam5 from '../../pages/Exam_5'
 import to_do_list from '../../pages/to_do_list'
+import Schedule from '../../pages/Schedule'
+
 export class Routers extends Component {
     render() {
         return (
             <Router>
-                <Header/>
+                <Header />
                 <div className='container-fluid'>
                     <Route exact path={process.env.REACT_APP_DEVELOPMENT_URL} component={main} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Exam1"} component={Exam1} />
@@ -23,6 +25,7 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Exam4"} component={Exam4} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Exam5"} component={Exam5} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "to_do_list"} component={to_do_list} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Schedule"} component={Schedule} />
                 </div>
             </Router>
         )

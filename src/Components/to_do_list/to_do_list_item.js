@@ -4,15 +4,15 @@ import TodoListItemTemplate from './to_do_list_item_template';
 
 export class to_do_list_item extends Component {
 
-    shouldComponentUpdate(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.todos !== nextProps.todos;
     }
-    
+
     render() {
         const { todos, onToggle, onRemove } = this.props;
 
         const todoList = todos.map(
-            ({id, text, checked, color}) => (
+            ({ id, text, checked, color }) => (
                 <TodoListItemTemplate
                     id={id}
                     text={text}
@@ -24,10 +24,10 @@ export class to_do_list_item extends Component {
                 />
             )
         );
-        
+
         return (
             <div>
-                {todoList}    
+                {todoList}
             </div>
         );
     }
