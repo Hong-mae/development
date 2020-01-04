@@ -5,7 +5,7 @@ import MyComponent from '../Components/Schedule/MyComponent'
 export class Schedule extends Component {
     render() {
         return (
-            <MyComponent />
+            <MyComponent>리액트</MyComponent>
         )
     }
 }
