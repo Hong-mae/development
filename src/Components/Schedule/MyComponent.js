@@ -8,4 +8,8 @@ const MyComponent = (props) => {
     )
 }
 
+MyComponent.defaultProps = {
+    name: "react"
+}
+
 export default MyComponent
