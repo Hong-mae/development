@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-import '../../css/to_do_list_item_template.scss';
-
 export class to_do_list_item_template extends Component {
 
-    shouldComponentUpdate(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.checked !== nextProps.checked;
     }
 

@@ -7,9 +7,13 @@ console.log(process.env);
 
 class App extends Component {
     render() {
+        const App_Style = {
+            width: '100%',
+            height: '100%'
+        }
         return (
-            <div className='App'>
-                <Routers/>
+            <div className='App' style={App_Style}>
+                <Routers />
             </div>
         );
     }

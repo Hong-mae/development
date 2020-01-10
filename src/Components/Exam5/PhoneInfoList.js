@@ -9,17 +9,17 @@ export class PhoneInfoList extends Component {
         onUpdate: () => console.log("onUpdate not defined"),
     }
 
-    shouldComponentUpdate(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.data !== nextProps.data;
     }
-    
+
     render() {
         console.log('render PhoneInfoList');
-        const { data, onRemove, onUpdate }  = this.props;
-        const list      = data.map(
+        const { data, onRemove, onUpdate } = this.props;
+        const list = data.map(
             info => (
-                <PhoneInfo 
-                    key={info.id} 
+                <PhoneInfo
+                    key={info.id}
                     info={info}
                     onRemove={onRemove}
                     onUpdate={onUpdate}
@@ -28,7 +28,7 @@ export class PhoneInfoList extends Component {
         );
         return (
             <div>
-                { list }
+                {list}
             </div>
         )
     }

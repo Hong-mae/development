@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 
-import '../../css/PhoneInfo.scss'
-
 export class PhoneInfo extends Component {
     static defaultProps = {
-        info : {
-            id      : 0,
-            name    : '이름',
-            phone   : '010-0000-0000',
+        info: {
+            id: 0,
+            name: '이름',
+            phone: '010-0000-0000',
         }
     }
 
@@ -30,8 +28,8 @@ export class PhoneInfo extends Component {
     handleToggleEdit = () => {
         const { is_edit } = this.state;
 
-        this.setState({ 
-            is_edit : !is_edit
+        this.setState({
+            is_edit: !is_edit
         });
     }
 
@@ -39,21 +37,21 @@ export class PhoneInfo extends Component {
         const { name, value } = e.target;
 
         this.setState({
-            [name] : value
+            [name]: value
         })
     }
 
-    componentDidUpdate(prevProps, prevState){
+    componentDidUpdate(prevProps, prevState) {
         const { info, onUpdate } = this.props;
 
-        if(!prevState.is_edit && this.state.is_edit) {
+        if (!prevState.is_edit && this.state.is_edit) {
             this.setState({
                 name: info.name,
                 phone: info.phone
             })
         }
 
-        if(prevState.is_edit && !this.state.is_edit){
+        if (prevState.is_edit && !this.state.is_edit) {
             onUpdate(info.id, {
                 name: this.state.name,
                 phone: this.state.phone
@@ -61,8 +59,8 @@ export class PhoneInfo extends Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState){
-        if(!this.state.is_edit
+    shouldComponentUpdate(nextProps, nextState) {
+        if (!this.state.is_edit
             && !nextState.is_edit
             && nextProps.info === nextProps.info)
             return false;
@@ -74,27 +72,27 @@ export class PhoneInfo extends Component {
 
         const { is_edit } = this.state;
 
-        if(is_edit) {
-            return(
-                <div className = 'PhoneInfo'>
+        if (is_edit) {
+            return (
+                <div className='PhoneInfo'>
                     <div>
                         <input
-                            value = {this.state.name}
-                            name = 'name'
-                            placeholder = '이름'
-                            onChange = {this.handleChange}
+                            value={this.state.name}
+                            name='name'
+                            placeholder='이름'
+                            onChange={this.handleChange}
                         />
                     </div>
                     <div>
                         <input
-                            value = {this.state.phone}
-                            name = 'phone'
-                            placeholder = '연락처'
-                            onChange = {this.handleChange}
+                            value={this.state.phone}
+                            name='phone'
+                            placeholder='연락처'
+                            onChange={this.handleChange}
                         />
                     </div>
-                    <button onClick = {this.handleToggleEdit}>적용</button>
-                    <button onClick = {this.handleRemove}>삭제</button>
+                    <button onClick={this.handleToggleEdit}>적용</button>
+                    <button onClick={this.handleRemove}>삭제</button>
                 </div>
             );
         }
@@ -104,7 +102,7 @@ export class PhoneInfo extends Component {
         } = this.props.info;
 
         return (
-            <div className = 'PhoneInfo'>
+            <div className='PhoneInfo'>
                 <div><p>{name}</p></div>
                 <div>{phone}</div>
                 <button onClick={this.handleToggleEdit}>수정</button>
