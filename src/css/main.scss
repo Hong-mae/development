@@ -4,3 +4,28 @@
 @import "PhoneInfo.scss";
 @import "to_do_list_item_template.scss";
 @import "to_do_list_template.scss";
+
+.contents, .navbar {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+
+.contents {
+    width: 80%;
+}
+
+.navbar {
+    width: 20%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+
+    .navbar-item {
+        display: block;
+        padding: 1em 0;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

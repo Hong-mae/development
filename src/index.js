@@ -4,6 +4,8 @@ import 'bootstrap/scss/bootstrap.scss';
 import './css/main.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie11';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

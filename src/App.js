@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 // Component
 import Routers from './Components/public/Routers'
 
-console.log(process.env);
 
 class App extends Component {
     render() {
