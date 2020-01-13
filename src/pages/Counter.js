@@ -36,7 +36,11 @@ export class Counter extends Component {
     doubledecreaseNumber = () => {
         this.setState(prevState => ({
             number : prevState.number - 2
-        }))
+        }),
+            () => {
+                console.log("-2 하셨음");
+            }
+        )
     }    
     render() {
         const { number, fixedNumber } = this.state;
