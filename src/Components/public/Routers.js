@@ -12,6 +12,8 @@ import Exam5 from '../../pages/Exam_5'
 import to_do_list from '../../pages/to_do_list'
 import Schedule from '../../pages/Schedule'
 import Counter from '../../pages/Counter'
+import Say from '../../pages/Say'
+import EventPractice from '../../pages/EventPractice'
 
 export class Routers extends Component {
     render() {
@@ -28,6 +30,8 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "to_do_list"} component={to_do_list} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Props"} component={Schedule} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Counter"} component={Counter} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Say"} component={Say} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "EventPractice"} component={EventPractice} />
                 </div>
             </Router>
         )
