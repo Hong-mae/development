@@ -15,6 +15,7 @@ import Counter from '../../pages/Counter'
 import Say from '../../pages/Say'
 import EventPractice from '../../pages/EventPractice'
 import EventPractice_2 from '../../pages/EventPractice_2'
+import ValidationSample from '../../pages/ValidationSample'
 
 export class Routers extends Component {
     render() {
@@ -34,7 +35,7 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Say"} component={Say} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "EventPractice"} component={EventPractice} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "EventPractice_2"} component={EventPractice_2} />
-                    
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "ValidationSample"} component={ValidationSample} />
                 </div>
             </Router>
         )
