@@ -23,7 +23,9 @@ export class ValidationSample extends Component {
         this.setState({
             clicked: true,
             validate: this.state.password === "0000",
-        })
+        });
+
+        this.input.focus();
     }
 
     handleFocus = (e) => {
@@ -31,6 +33,10 @@ export class ValidationSample extends Component {
             clicked: false,
             validate: false
         })
+    }
+
+    handleRef = (ref) => {
+        this.input=ref;
     }
 
     render() {
@@ -41,7 +47,7 @@ export class ValidationSample extends Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                     className={this.state.clicked ? (this.state.validate ? 'success' : 'failure') : ''}
-                    onFocus={this.handleFocus}
+                    // ref={this.handleRef}
                 />
                 <button onClick={this.handleClick}>검증하기</button>
             </div>
