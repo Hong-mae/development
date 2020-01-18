@@ -19,6 +19,7 @@ export class Header extends Component {
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'EventPractice_2'}>EventPractice - Func</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'ValidationSample'}>ValidationSample</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'ScrollBox'}>ScrollBox</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Iteration'}>Iteration</Link>
             </nav>
         )
     }

@@ -17,6 +17,7 @@ import EventPractice from '../../pages/EventPractice'
 import EventPractice_2 from '../../pages/EventPractice_2'
 import ValidationSample from '../../pages/ValidationSample'
 import ScrollBox from '../../pages/ScrollBox'
+import Iteration from '../../pages/IterationSampe'
 
 export class Routers extends Component {
     render() {
@@ -38,6 +39,7 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "EventPractice_2"} component={EventPractice_2} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "ValidationSample"} component={ValidationSample} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "ScrollBox"} component={ScrollBox} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Iteration"} component={Iteration} />
                 </div>
             </Router>
         )
