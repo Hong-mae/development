@@ -23,6 +23,8 @@ import Counter_func from '../../pages/Counter_func'
 import info_effect from '../../pages/Info'
 import Counter_reducer from '../../pages/Counter_reducer'
 import Info_reducer from '../../pages/Info_reducer'
+import Average from '../../pages/Average'
+import Average_callback from '../../pages/Average_callback'
 
 export class Routers extends Component {
     render() {
@@ -50,6 +52,8 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info"} component={info_effect} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Counter_3"} component={Counter_reducer} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info_2"} component={Info_reducer} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average"} component={Average} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average_2"} component={Average_callback} />
                 </div>
             </Router>
         )
