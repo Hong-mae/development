@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/scss/bootstrap.scss';
-import './css/main.scss';
+import './styles/main.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'react-app-polyfill/ie9';

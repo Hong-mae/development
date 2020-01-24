@@ -1,9 +1,13 @@
+
+@import '~bootstrap/scss/bootstrap.scss';
 @import "navbar.scss";
 @import "form.scss";
 @import "palette.scss";
 @import "PhoneInfo.scss";
 @import "to_do_list_item_template.scss";
 @import "to_do_list_template.scss";
+@import 'validate.scss';
+
 
 .contents, .navbar {
     display: inline-block;

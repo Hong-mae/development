@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import MyComponent from '../Components/Schedule/MyComponent'
+import MyComponent from '../Components/MyComponent/MyComponent'
 
 export class Schedule extends Component {
     render() {

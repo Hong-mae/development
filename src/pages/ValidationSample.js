@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import '../css/validate.scss'
-
 export class ValidationSample extends Component {
     constructor(props) {
         super(props);
@@ -36,7 +34,7 @@ export class ValidationSample extends Component {
     }
 
     handleRef = (ref) => {
-        this.input=ref;
+        this.input = ref;
     }
 
     render() {
@@ -47,7 +45,7 @@ export class ValidationSample extends Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                     className={this.state.clicked ? (this.state.validate ? 'success' : 'failure') : ''}
-                    // ref={this.handleRef}
+                // ref={this.handleRef}
                 />
                 <button onClick={this.handleClick}>검증하기</button>
             </div>
