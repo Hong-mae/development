@@ -23,7 +23,8 @@ export class Header extends Component {
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'LifeCycle'}>LifeCycle</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Counter_2'}>Counter - func</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Info'}>Info - effect</Link>
-                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Counter'}>Counter - reducer</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Counter_3'}>Counter - reducer</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Info_2'}>Info - reducer</Link>
             </nav>
         )
     }

@@ -21,6 +21,8 @@ import Iteration from '../../pages/IterationSampe'
 import LifeCycle from '../../pages/LifeCycleSample'
 import Counter_func from '../../pages/Counter_func'
 import info_effect from '../../pages/Info'
+import Counter_reducer from '../../pages/Counter_reducer'
+import Info_reducer from '../../pages/Info_reducer'
 
 export class Routers extends Component {
     render() {
@@ -46,6 +48,8 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "LifeCycle"} component={LifeCycle} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Counter_2"} component={Counter_func} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info"} component={info_effect} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Counter_3"} component={Counter_reducer} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info_2"} component={Info_reducer} />
                 </div>
             </Router>
         )
