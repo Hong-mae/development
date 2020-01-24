@@ -18,6 +18,9 @@ import EventPractice_2 from '../../pages/EventPractice_2'
 import ValidationSample from '../../pages/ValidationSample'
 import ScrollBox from '../../pages/ScrollBox'
 import Iteration from '../../pages/IterationSampe'
+import LifeCycle from '../../pages/LifeCycleSample'
+import Counter_func from '../../pages/Counter_func'
+import info_effect from '../../pages/Info'
 
 export class Routers extends Component {
     render() {
@@ -40,6 +43,9 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "ValidationSample"} component={ValidationSample} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "ScrollBox"} component={ScrollBox} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Iteration"} component={Iteration} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "LifeCycle"} component={LifeCycle} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Counter_2"} component={Counter_func} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info"} component={info_effect} />
                 </div>
             </Router>
         )
