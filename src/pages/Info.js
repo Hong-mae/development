@@ -6,7 +6,7 @@ const Info = () => {
     useEffect(() => {
         console.log("randering complete");
         console.log({name, nick});
-    }, [])
+    })
 
     const onChangeName = (e) => {
         setName(e.target.value);
