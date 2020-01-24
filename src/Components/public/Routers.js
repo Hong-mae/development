@@ -26,6 +26,7 @@ import Info_reducer from '../../pages/Info_reducer'
 import Average from '../../pages/Average'
 import Average_callback from '../../pages/Average_callback'
 import Average_ref from '../../pages/Average_ref'
+import Info_custom from '../../pages/Info_custom'
 
 export class Routers extends Component {
     render() {
@@ -56,6 +57,7 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average"} component={Average} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average_2"} component={Average_callback} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average_3"} component={Average_ref} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info_3"} component={Info_custom} />
                 </div>
             </Router>
         )
