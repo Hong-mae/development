@@ -27,6 +27,7 @@ import Average from '../../pages/Average'
 import Average_callback from '../../pages/Average_callback'
 import Average_ref from '../../pages/Average_ref'
 import Info_custom from '../../pages/Info_custom'
+import To_Do_Apps from '../../pages/To_Do_Apps'
 
 export class Routers extends Component {
     render() {
@@ -58,6 +59,7 @@ export class Routers extends Component {
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average_2"} component={Average_callback} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Average_3"} component={Average_ref} />
                     <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Info_3"} component={Info_custom} />
+                    <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "To_Do_Apps"} component={To_Do_Apps} />
                 </div>
             </Router>
         )
