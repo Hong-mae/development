@@ -31,6 +31,7 @@ import To_Do_Apps from '../../pages/To_Do_Apps'
 import Profile from '../../pages/Profile'
 import Abount from '../../pages/About'
 import Profiles from '../../pages/Profiles'
+import News from '../../pages/News'
 
 export class Routers extends Component {
     render() {
@@ -67,6 +68,7 @@ export class Routers extends Component {
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profile/:username"} component={Profile} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "About"} component={Abount} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profiles"} component={Profiles} />
+                        <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "News"} component={News} />
 
                         <Route 
                             render={({ location }) => (

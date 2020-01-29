@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 export class Header extends Component {
     render() {
+        const hrColor = {
+            borderColor: "red"
+        }
         return (
             <nav className='navbar'>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL}>홈</Link>
@@ -33,6 +36,8 @@ export class Header extends Component {
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Profile/p-bin'}>Profile</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'About'}>About</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Profiles'}>Profile - sub route</Link>
+                <hr style={hrColor}/>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'News'}>Use API</Link>
             </nav>
         )
     }
