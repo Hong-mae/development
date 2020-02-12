@@ -37,7 +37,7 @@ export class Header extends Component {
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'About'}>About</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Profiles'}>Profile - sub route</Link>
                 <hr style={hrColor}/>
-                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'News'}>Use API</Link>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'News/all'}>Use API</Link>
             </nav>
         )
     }

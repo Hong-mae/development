@@ -68,7 +68,7 @@ export class Routers extends Component {
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profile/:username"} component={Profile} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "About"} component={Abount} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profiles"} component={Profiles} />
-                        <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "News"} component={News} />
+                        <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "News/:category"} component={News} />
 
                         <Route 
                             render={({ location }) => (

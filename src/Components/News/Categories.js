@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { NavLink } from 'react-router-dom';
 
 const categories = [
     {
@@ -43,7 +44,37 @@ const CategoriesBlock = styled.div`
     }
 `;
 
-const Category = styled.div`
+// 라우터 적용 전
+// const Category = styled.div`
+//     font-size: 1.125rem;
+//     cursor: pointer;
+//     white-space: pre;
+//     text-decoration: none;
+//     color: inherit;
+//     padding-bottom: 0.25rem;
+
+//     &:hover {
+//         color: #495057;
+//     }
+
+//     ${props => 
+//         props.active && css`
+//             font-weight: bold;
+//             border-bottom: 2px solid #22b8cf;
+//             color: #22b8cf;
+//             &:hover {
+//                 color: #3bc9db;
+//             }
+//         `
+//     }
+
+//     & + & {
+//         margin-left: 1rem;
+//     }
+// `;
+
+// 라우터 적용 후
+const Category = styled(NavLink)`
     font-size: 1.125rem;
     cursor: pointer;
     white-space: pre;
@@ -55,15 +86,13 @@ const Category = styled.div`
         color: #495057;
     }
 
-    ${props => 
-        props.active && css`
-            font-weight: bold;
-            border-bottom: 2px solid #22b8cf;
-            color: #22b8cf;
-            &:hover {
-                color: #3bc9db;
-            }
-        `
+    &.active {
+        font-weight: bold;
+        border-bottom: 2px solid #22b8cf;
+        color: #22b8cf;
+        &:hover {
+            color: #3bc9db;
+        }
     }
 
     & + & {
@@ -76,9 +105,16 @@ const Categories = ({ onSelect, category}) => {
         <CategoriesBlock>
             {categories.map(c => (
                 <Category 
+                    // 라우터 적용 전
+                    // key={c.name}
+                    // active={category === c.name}
+                    // onClick={() => onSelect(c.name)}
+
+                    // 라우터 적용 후
                     key={c.name}
-                    active={category === c.name}
-                    onClick={() => onSelect(c.name)}
+                    activeClassName='active'
+                    exact={c.name === 'all'}
+                    to={c.name === 'all' ? '/News/all' : `/News/${c.name}`}
                     >
                         {c.text}
                 </Category>
