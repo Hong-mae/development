@@ -1,23 +1,52 @@
 import React from 'react'
-import ColorContext from '../../Contexts/color'
+import ColorContext, { ColorProvider, ColorConsumer } from '../../Contexts/color'
+import SelectColors from './SelectColors'
 
 const ColorBox = () => {
     return (
-        <ColorContext.Provider value={{color : 'red'}}>
+        <ColorProvider>
             <div>
-                <ColorContext.Consumer>
-                    {value => (
-                        <div
-                            style = {{
-                                width: '64px',
-                                height: '64px',
-                                background: value.color
-                            }}
-                        />
+                <SelectColors/>
+                <ColorConsumer>
+                    {/* {value => (
+                        <>
+                            <div
+                                style = {{
+                                    width: '64px',
+                                    height: '64px',
+                                    background: value.state.color
+                                }}
+                            />
+                            <div
+                                style = {{
+                                    width: '32px',
+                                    height: '32px',
+                                    background: value.state.subcolor
+                                }}
+                            />
+                        </>
+                    )} */}
+                    {({state}) => (
+                        <>
+                            <div
+                                style = {{
+                                    width: '64px',
+                                    height: '64px',
+                                    background: state.color
+                                }}
+                            />
+                            <div
+                                style = {{
+                                    width: '32px',
+                                    height: '32px',
+                                    background: state.subcolor
+                                }}
+                            />
+                        </>
                     )}
-                </ColorContext.Consumer>
+                </ColorConsumer>
             </div>
-        </ColorContext.Provider>
+        </ColorProvider>
     )
 }
 
