@@ -32,6 +32,7 @@ import Profile from '../../pages/Profile'
 import Abount from '../../pages/About'
 import Profiles from '../../pages/Profiles'
 import News from '../../pages/News'
+import ColorBox from '../ColorBox/ColorBox'
 
 export class Routers extends Component {
     render() {
@@ -69,6 +70,7 @@ export class Routers extends Component {
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "About"} component={Abount} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profiles"} component={Profiles} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "News/:category"} component={News} />
+                        <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Context"} component={ColorBox} />
 
                         <Route 
                             render={({ location }) => (
