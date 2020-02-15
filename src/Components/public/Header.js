@@ -39,6 +39,8 @@ export class Header extends Component {
                 <hr style={hrColor}/>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'News/all'}>Use API</Link>
                 <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'Context'}>Context API</Link>
+                <hr style={hrColor}/>
+                <Link className='navbar-item' to={process.env.REACT_APP_DEVELOPMENT_URL + 'redux'}>React Redux</Link>
             </nav>
         )
     }

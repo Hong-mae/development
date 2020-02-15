@@ -33,6 +33,7 @@ import Abount from '../../pages/About'
 import Profiles from '../../pages/Profiles'
 import News from '../../pages/News'
 import ColorBox from '../ColorBox/ColorBox'
+import reduxCounter from '../../pages/reduxCounter'
 
 export class Routers extends Component {
     render() {
@@ -71,6 +72,7 @@ export class Routers extends Component {
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Profiles"} component={Profiles} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "News/:category"} component={News} />
                         <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "Context"} component={ColorBox} />
+                        <Route path={process.env.REACT_APP_DEVELOPMENT_URL + "redux"} component={reduxCounter} />
 
                         <Route 
                             render={({ location }) => (
