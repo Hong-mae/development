@@ -5,12 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './modules';
 import { Provider } from 'react-redux';
+// import loggerMiddleware from './lib/loggerMiddleware';
+import { createLogger } from 'redux-logger';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(
     <Provider store={store}>
