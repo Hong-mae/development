@@ -1,0 +1,63 @@
+import React, { Component } from 'react';
+
+class UpdateContent extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            id      : this.props.data.id,
+            title   : this.props.data.title,
+            desc    : this.props.data.desc,
+        }
+    }
+
+    handleOnSubmit = (e) => {
+        e.preventDefault();
+        this.props.onSubmit(
+            this.state.id, 
+            this.state.title, 
+            this.state.desc);
+        e.target.title.value = "";
+        e.target.desc.value = "";
+    }
+
+    handleOnChange = (e) => {
+        this.setState({
+            [e.target.name]   : e.target.value,
+        });
+    }
+
+    render() {
+        console.log("UpdateContent Rander");
+        return (
+            <article>
+                <h2>Update</h2>
+                <form
+                    action='/create_process'
+                    method='post'
+                    onSubmit={this.handleOnSubmit}>
+                    <input type='hidden' name='id' value={this.state.id}/>
+                    <p>
+                        <input 
+                            type='text'
+                            name='title'
+                            placeholder='title'
+                            value={this.state.title}
+                            onChange={this.handleOnChange}/>
+                    </p>
+                    <p>
+                        <textarea 
+                            name='desc'
+                            placeholder='description'
+                            onChange={this.handleOnChange}
+                            value={this.state.desc}/>
+                    </p>
+                    <p>
+                        <input type='submit'/>
+                    </p>
+                </form>
+            </article>
+        );
+    }
+}
+
+export default UpdateContent;

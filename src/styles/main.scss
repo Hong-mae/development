@@ -1,0 +1,47 @@
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import "navbar.scss";
+@import "form.scss";
+@import "palette.scss";
+@import "PhoneInfo.scss";
+@import "to_do_list_item_template.scss";
+@import "to_do_list_template.scss";
+@import 'validate.scss';
+@import 'todoapps.scss';
+
+
+.contents, .navbar {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    overflow: auto;
+}
+
+.contents {
+    width: 80%;
+}
+
+.navbar {
+    width: 20%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+
+    .navbar-item {
+        display: block;
+        padding: 1em 0;
+    }
+    
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #021859;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #0468BF;
+        border-radius: 10px;
+    }
+}
